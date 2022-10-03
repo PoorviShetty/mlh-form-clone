@@ -1,0 +1,103 @@
+<style>
+    .has_github, .has_portfolio {
+      display: none;
+    }
+    .has_linkedin {
+      display: none;
+    }
+    .has_github {
+      display: none;
+    }
+    .has_github {
+      display: none;
+    }
+</style>
+<div class="container-fluid" id="part1">
+    <div class="row">
+        <h2 class="mb-3 fw-bold">Create your Profile</h2>
+        <p>Let's start by collecting some basic information about you and where we can find you on the internet.</p>
+    </div>
+    <div class="row pt-3 border border-dark my-2">
+        <h3 class="mb-3 fw-bold">Basic Information</h3>
+        <div class="row pb-2">
+            <div class="col">
+                <label for="first_name" class="form-label">First Name:</label>
+                <input type="text" class="form-control" name="first_name">
+            </div>
+            <div class="col">
+                <label for="last_name" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" name="last_name">
+            </div>
+        </div>
+        <div class="row pb-2">
+            <div class="col">
+                <label for="primary_email" class="form-label">Primary Email Address:</label>
+                <input type="email" class="form-control" name="primary_email">
+            </div>
+        </div>
+        
+    </div>
+    <div class="row pt-3 border border-dark my-2">
+        <h3 class="mb-3 fw-bold">Portfolio/Resume</h3>
+        <p>We ask you to share a copy of your resume and links to your online profiles to help us better understand your experience level and background. The more information you can share with us, the better!</p>
+
+        <p><em>You must share <strong>at least one</strong> of the listed items with us to submit an application. Uncheck the box next to anything that you don't currently have.</em></p>
+
+        <p>Which of the following do you have that you can you share with us?</p>
+        <p>
+            <input class="form-check-input part3" type="checkbox" name="has_resume" checked>Resume
+        </p>
+        <p>
+            <input class="form-check-input part3" type="checkbox" name="has_github">Github Profile
+        </p>
+        <p>
+            <input class="form-check-input part3" type="checkbox" name="has_linkedin">LinkedIn Profile
+        </p>
+        <p>
+            <input class="form-check-input part3" type="checkbox" name="has_portfolio">Personal Website / Portfolio
+        </p>
+        <br/>
+        <div class="has_resume">
+            <label for="resume_link" class="form-label">Resume Link (Google Drive Link)</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="resume_link">
+            </div>
+        </div>
+        <div class="has_linkedin">
+            <label for="linkedin_link" class="form-label">LinkedIn Link</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">https://linkedin.com/in/</span>
+              <input type="text" class="form-control" name="linkedin_link">
+            </div>
+        </div>
+        <div class="has_github">
+            <label for="github_link" class="form-label">Github Link</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">https://github.com/</span>
+              <input type="text" class="form-control" name="github_link">
+            </div>
+        </div>
+        <div class="has_portfolio">
+            <label for="portfolio_link" class="form-label">Portfolio / Personal Website</label>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="portfolio_link">
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+
+    $('input[type="checkbox"].part3').click(function() {
+        var inputValue = $(this).attr("name");
+        if ($(this).is(":checked")){
+            $("." + inputValue).show();
+        }else{
+            $("." + inputValue).hide();
+        }
+        
+
+    });
+
+</script>

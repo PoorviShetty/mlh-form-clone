@@ -1,6 +1,6 @@
-{% extends 'base_form.html' %}
+{% extends 'base.html' %}
 
-{% block form %}
+{% block content %}
 
 <style>
     .section {
@@ -8,31 +8,38 @@
     }
 </style>
 
-<div class="container">
-    <form method = "POST" id="form">
-        <div class="row py-2 pt-5">
-            <div class="col col-md-11">
-                {% for i in range(1, form| length + 1) %} 
-                    <div class="section">
-                        {{form[i|string]}}
+<div class="container-fluid bg-dark p-2 min-vh-100">
+    <div class="row d-flex justify-content-center m-0">
+        <div class="col-11 col-md-7 col-lg-6 bg-light">
+            <div class="container-fluid p-0">
+                <form method = "POST" id="form">
+                    <div class="row py-2 pt-5">
+                        <div class="col col-md-12">
+                            {% for i in range(0, form| length) %} 
+                                <div class="section">
+                                    {% include form[i] %}
+                                </div>
+                            {% endfor %} 
+                        </div>
+            
                     </div>
-                {% endfor %} 
+                    <div class="row py-3 px-3 d-flex">
+                        <div class="col">
+                            <button type="button" class="btn btn-dark me-2" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                            <button type="button" class="btn btn-dark me-2" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                        </div>
+                    </div>
+                    <div class = "row pb-3">
+                        <p class="text-end">
+                            Save my progress and resume later | Resume a previously saved form
+                        </p>
+                    </div>
+                </form>
             </div>
-
         </div>
-        <div class="row pt-5 pb-3 d-flex">
-            <div class="col">
-                <button type="button" class="btn btn-dark me-2" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                <button type="button" class="btn btn-dark me-2" id="nextBtn" onclick="nextPrev(1)">Next</button>
-            </div>
-        </div>
-        <div class = "row pb-3">
-            <p class="text-end">
-                Save my progress and resume later | Resume a previously saved form
-            </p>
-        </div>
-    </form>
+    </div>
 </div>
+
 
 
 <script>
@@ -60,8 +67,8 @@
         x[currentTab].style.display = "none";
         currentTab = currentTab + n;
         if (currentTab >= x.length) {
-        document.getElementById("form").submit();
-        return false;
+            document.getElementById("form").submit();
+            return false;
         }
         showTab(currentTab);
     }

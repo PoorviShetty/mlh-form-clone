@@ -1,0 +1,54 @@
+<div class="container" id="part1">
+    <div class="row">
+        <h2 class="mb-3 fw-bold">Eligibility Check</h2>
+        <p>Before we get too far along, let's confirm your eligibility for the program. In order to apply for this program you must meet <strong>all</strong> of the criteria listed below.</p>
+    </div>
+    <div class="row pt-3">
+        <h6 class="mb-3 fw-bold">Instructions</h6>
+        <textarea disabled id="part2-instructions">Check the box next to each statement that applies to you today, In order to continue, you must meet all of the criteria listed below.
+        </textarea>
+    </div>
+    <div class="row pt-3">
+        <h6 class="mb-3 fw-bold">Program Qualification Confirmation</h6>
+
+        <p>
+            <input class="form-check-input part2" type="checkbox" name="age">
+            <strong>Age: </strong>I am over the age of 18.
+        </p>
+        <p>
+            <input class="form-check-input part2" type="checkbox" name="residency">
+            <strong>Residency: </strong>I am over the age of 18.
+        </p>
+        <p>
+            <input class="form-check-input part2" type="checkbox" name="time_commitment">
+            <strong>Time Commitment: </strong>I am able to commit at least 30 hours per week to the program.
+        </p>
+        <p>
+            <input class="form-check-input part2" type="checkbox" name="communication">
+            <strong>Communication: </strong>I am proficient with English, both written and spoken.
+        </p>
+        <p>
+            <input class="form-check-input part2" type="checkbox" name="coding_experience">
+            <strong>Coding Experience: </strong>I can code proficiently in at least one programming language.
+        </p>
+        <p>
+            <input class="form-check-input part2" type="checkbox" name="environment">
+            <strong>Environment: </strong>I have regular access to quiet workspace for meetings and coding.
+        </p>
+        <p>
+            <input class="form-check-input part2" type="checkbox" name="av_setup">
+            <strong>A/V Setup: </strong>I have regular access to a video call quality internet connection, webcam, & microphone.
+        </p>
+    </div>
+</div>
+
+<script>
+    $("input[type='checkbox'].part2").change(function(){
+    var a = $("input[type='checkbox'].part2");
+    if(a.length == a.filter(":checked").length){
+        $("#part2-instructions").text("Congratulations, you eligible! Please continue your application.");
+    }else{
+        $("#part2-instructions").text("Check the box next to each statement that applies to you today, In order to continue, you must meet all of the criteria listed below.");
+    }
+});
+</script>

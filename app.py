@@ -28,10 +28,13 @@ def apply():
  
 @app.route('/form/<int:id>', methods=['GET', 'POST'])
 def form(id):
+    if request.method == 'POST':
+        print(request.form)
     with open('form.json') as test_file:
         form = json.load(test_file)
-    print(form)
-    return render_template('form.html', form=form)
+    parts = ['part1.html', 'part2.html', 'part3.html', 'part4.html', 'part5.html', 'part6.html', 'part7.html', 'part8.html', 'part9.html']
+    parts = ['form_parts/' + x for x in parts]
+    return render_template('form.html', form=parts)
  
 if __name__ == '__main__':
     with app.app_context():

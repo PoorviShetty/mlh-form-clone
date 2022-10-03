@@ -21,7 +21,7 @@
 - [ ] Add dummy info to apply page
 - [ ] Form progress bar
 - [ ] Error flash messages if required fields are not filled
-- [ ] Modify form
+- [x] Modify form
 - [ ] Modify DB
 
 ### User Side
