@@ -1,5 +1,6 @@
 import os
 import random
+import json
 from flask import Flask, render_template, request, redirect, url_for, flash, session, abort, send_from_directory
 from models import db
 from dotenv import load_dotenv
@@ -27,8 +28,10 @@ def apply():
  
 @app.route('/form/<int:id>', methods=['GET', 'POST'])
 def form(id):
-    print(id)
-    return render_template('form.html')
+    with open('form.json') as test_file:
+        form = json.load(test_file)
+    print(form)
+    return render_template('form.html', form=form)
  
 if __name__ == '__main__':
     with app.app_context():

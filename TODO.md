@@ -8,7 +8,7 @@
 - [x] Connect to a DB
 - [x] Create a bare-bones 'Apply' button
 - [x] Click on apply, url with id should be generated, leading to form page
-- [ ] Create multi-page form
+- [x] Create bare-bones multi-page form
 - [ ] Store form data in DB
 - [ ] Provide option to pause form
 - [ ] Store user creds for id on pausing
@@ -21,6 +21,8 @@
 - [ ] Add dummy info to apply page
 - [ ] Form progress bar
 - [ ] Error flash messages if required fields are not filled
+- [ ] Modify form
+- [ ] Modify DB
 
 ### User Side
 
