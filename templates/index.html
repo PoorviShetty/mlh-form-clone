@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{{ url_for('apply') }}" method="post">
+    <input class="btn btn-lg bg-dark" type="submit" name="apply" value="Apply Now!" />
+</form>
+
+{% endblock %}

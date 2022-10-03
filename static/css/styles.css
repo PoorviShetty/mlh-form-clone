@@ -1,0 +1,15 @@
+:root {
+    --space-cadet: hsla(240, 27%, 18%, 1);
+    --independence: hsla(232, 17%, 35%, 1);
+    --heliotrope-gray: hsla(309, 6%, 58%, 1);
+    --silver-pink: hsla(11, 24%, 72%, 1);
+    --isabelline: hsla(21, 35%, 92%, 1);
+}
+
+.bg-dark{
+   background-color: var(--silver-pink) !important;
+}
+
+.bg-light{
+    background-color: var(--isabelline) !important;
+}
