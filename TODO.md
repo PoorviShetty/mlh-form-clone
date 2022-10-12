@@ -24,7 +24,7 @@
 - [x] Modify form
 - [ ] Modify DB
 
-### User Side
+### Admin Side
 
 - [ ] Dashboard with submissions to be processed
 - [ ] View submissions to be processed
